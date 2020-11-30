@@ -14,7 +14,7 @@ void CPU_tester::Set_arrSizes() {
     arr_sizes.push_back(size * 256);
     size *= 2;
   }
-  arr_sizes.push_back(3 * L3 / 2);
+  arr_sizes.push_back(3 * 256 * L3 / 2);
 }
 void CPU_tester::completeAllTests() {
   //Direct test
