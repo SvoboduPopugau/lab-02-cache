@@ -155,4 +155,220 @@ investigation:                                       |  investigation:
 ...                                                  |  ...
 ```
 
-⚠️ В отчет также необходимо добавить общий график с результатами всех исследований. ⚠️
+#### Отчет
+investigation: 
+
+travel variant: direct
+
+experiments: 
+- experiment: 
+    number: 1
+    input data: 
+      buffer size: 16KiB
+    results: 
+      duration: 0 mcs
+- experiment: 
+    number: 2
+    input data: 
+      buffer size: 32KiB
+    results: 
+      duration: 0.465 mcs
+- experiment: 
+    number: 3
+    input data: 
+      buffer size: 64KiB
+    results: 
+      duration: 1.823 mcs
+- experiment: 
+    number: 4
+    input data: 
+      buffer size: 128KiB
+    results: 
+      duration: 4.368 mcs
+- experiment: 
+    number: 5
+    input data: 
+      buffer size: 256KiB
+    results: 
+      duration: 8.603 mcs
+- experiment: 
+    number: 6
+    input data: 
+      buffer size: 512KiB
+    results: 
+      duration: 18.956 mcs
+- experiment: 
+    number: 7
+    input data: 
+      buffer size: 1024KiB
+    results: 
+      duration: 34.696 mcs
+- experiment: 
+    number: 8
+    input data: 
+      buffer size: 2048KiB
+    results: 
+      duration: 82.471 mcs
+- experiment: 
+    number: 9
+    input data: 
+      buffer size: 4096KiB
+    results: 
+      duration: 168.887 mcs
+- experiment: 
+    number: 10
+    input data: 
+      buffer size: 8192KiB
+    results: 
+      duration: 489.737 mcs
+- experiment: 
+    number: 11
+    input data: 
+      buffer size: 12288KiB
+    results: 
+      duration: 777.686 mcs
+
+investigation: 
+
+travel variant: reverse
+
+experiments: 
+- experiment: 
+    number: 1
+    input data: 
+      buffer size: 16KiB
+    results: 
+      duration: 0.051 mcs
+- experiment: 
+    number: 2
+    input data: 
+      buffer size: 32KiB
+    results: 
+      duration: 1.012 mcs
+- experiment: 
+    number: 3
+    input data: 
+      buffer size: 64KiB
+    results: 
+      duration: 3.005 mcs
+- experiment: 
+    number: 4
+    input data: 
+      buffer size: 128KiB
+    results: 
+      duration: 6.05 mcs
+- experiment: 
+    number: 5
+    input data: 
+      buffer size: 256KiB
+    results: 
+      duration: 11.156 mcs
+- experiment: 
+    number: 6
+    input data: 
+      buffer size: 512KiB
+    results: 
+      duration: 21.209 mcs
+- experiment: 
+    number: 7
+    input data: 
+      buffer size: 1024KiB
+    results: 
+      duration: 35.695 mcs
+- experiment: 
+    number: 8
+    input data: 
+      buffer size: 2048KiB
+    results: 
+      duration: 69.648 mcs
+- experiment: 
+    number: 9
+    input data: 
+      buffer size: 4096KiB
+    results: 
+      duration: 171.033 mcs
+- experiment: 
+    number: 10
+    input data: 
+      buffer size: 8192KiB
+    results: 
+      duration: 572.254 mcs
+- experiment: 
+    number: 11
+    input data: 
+      buffer size: 12288KiB
+    results: 
+      duration: 913.352 mcs
+
+investigation: 
+
+travel variant: random
+
+experiments: 
+- experiment: 
+    number: 1
+    input data: 
+      buffer size: 16KiB
+    results: 
+      duration: 6.02 mcs
+- experiment: 
+    number: 2
+    input data: 
+      buffer size: 32KiB
+    results: 
+      duration: 11.307 mcs
+- experiment: 
+    number: 3
+    input data: 
+      buffer size: 64KiB
+    results: 
+      duration: 20.997 mcs
+- experiment: 
+    number: 4
+    input data: 
+      buffer size: 128KiB
+    results: 
+      duration: 35.796 mcs
+- experiment: 
+    number: 5
+    input data: 
+      buffer size: 256KiB
+    results: 
+      duration: 67.657 mcs
+- experiment: 
+    number: 6
+    input data: 
+      buffer size: 512KiB
+    results: 
+      duration: 142.354 mcs
+- experiment: 
+    number: 7
+    input data: 
+      buffer size: 1024KiB
+    results: 
+      duration: 287.513 mcs
+- experiment: 
+    number: 8
+    input data: 
+      buffer size: 2048KiB
+    results: 
+      duration: 586.509 mcs
+- experiment: 
+    number: 9
+    input data: 
+      buffer size: 4096KiB
+    results: 
+      duration: 1242.84 mcs
+- experiment: 
+    number: 10
+    input data: 
+      buffer size: 8192KiB
+    results: 
+      duration: 5491.62 mcs
+- experiment: 
+    number: 11
+    input data: 
+      buffer size: 12288KiB
+    results: 
+      duration: 10545.3 mcs
+

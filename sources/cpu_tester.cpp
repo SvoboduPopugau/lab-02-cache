@@ -17,7 +17,7 @@ void CPU_tester::Set_arrSizes() {
   arr_sizes.push_back(3 * 256 * L3 / 2);
 }
 void CPU_tester::completeAllTests() {
-  //Direct test
+//    Direct test
   std::cout << "investigation: " << std::endl << "travel variant: direct" <<\
       std::endl << "experiments: " << std::endl;
   for (size_t i = 0; i < arr_sizes.size(); ++i){
@@ -41,7 +41,7 @@ void CPU_tester::completeAllTests() {
         "      duration: " << ReverseTest(arr_sizes[i]) << " mcs" <<\
         std::endl;
   }
-  //Random test
+    //Random test
   std::cout << "investigation: " << std::endl << "travel variant: random" <<\
       std::endl << "experiments: " << std::endl;
   for (size_t i = 0; i < arr_sizes.size(); ++i){
@@ -117,8 +117,8 @@ double CPU_tester::RandomTest(int arr_size) {
   delete array;
   return time/static_cast<double>(TESTCOUNT);
 }
-int CPU_tester::GetRandom(int first, int last) {
-  return last + rand()%(last - first + 1);
+unsigned long int CPU_tester::GetRandom(int first, int last) {
+  return first + random() % (last - first + 1);
 }
 int* CPU_tester::GetRandArr(int size) {
   int *arr = new int[size];

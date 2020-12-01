@@ -19,7 +19,7 @@ class CPU_tester{
   double ReverseTest (int arr_size);
   double RandomTest (int arr_size);
   int *GetRandArr(int size);
-  int GetRandom(int first, int last);
+  unsigned long int GetRandom(int first, int last);
  private:
   std::vector<int> arr_sizes;
 };
