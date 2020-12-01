@@ -123,6 +123,6 @@ int CPU_tester::GetRandom(int first, int last) {
 int* CPU_tester::GetRandArr(int size) {
   int *arr = new int[size];
   for (int i = 0; i < size; ++i)
-    arr[i] = rand_r();
+    arr[i] = rand();
   return arr;
 }
