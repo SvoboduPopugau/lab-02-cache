@@ -63,7 +63,7 @@ double CPU_tester::DirectTest(int arr_size) {
     temp = array[i];
 
   double time = 0;
-  for (unsigned short int j = 0; j < TESTCOUNT; ++j){
+  for (int j = 0; j < TESTCOUNT; ++j){
     auto start = std::chrono::steady_clock::now();
     for (int i = 0; i < arr_size; i+=16)
       temp = array[i];
@@ -84,7 +84,7 @@ double CPU_tester::ReverseTest(int arr_size) {
     temp = array[arr_size-1-i];
 
   double time = 0;
-  for (unsigned short int j = 0; j < TESTCOUNT; ++j){
+  for (int j = 0; j < TESTCOUNT; ++j){
     auto start = std::chrono::steady_clock::now();
     for (int i = 0; i < arr_size; i+=16)
       temp = array[arr_size-1-i];
@@ -105,10 +105,10 @@ double CPU_tester::RandomTest(int arr_size) {
     temp = array[GetRandom(0, arr_size - 1)];
 
   double time = 0;
-  for (unsigned short int j = 0; j < TESTCOUNT; ++j){
+  for (int j = 0; j < TESTCOUNT; ++j){
     auto start = std::chrono::steady_clock::now();
     for (int i = 0; i < arr_size/16; ++i)
-      temp = array[GetRandom(0,arr_size-1)];
+      temp = array[GetRandom(0, arr_size-1)];
     auto finish = std::chrono::steady_clock::now();
     time +=
         std::chrono::duration_cast<std::chrono::microseconds>(finish - start)
@@ -117,12 +117,12 @@ double CPU_tester::RandomTest(int arr_size) {
   delete array;
   return time/static_cast<double>(TESTCOUNT);
 }
-unsigned long int CPU_tester::GetRandom(int first, int last) {
+int CPU_tester::GetRandom(int first, int last) {
   return first + random() % (last - first + 1);
 }
 int* CPU_tester::GetRandArr(int size) {
   int *arr = new int[size];
   for (int i = 0; i < size; ++i)
-    arr[i] = rand();
+    arr[i] = rand_r();
   return arr;
 }

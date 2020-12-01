@@ -12,14 +12,14 @@
 class CPU_tester{
  public:
   CPU_tester(const std::vector<int>& arrSizes);
-  void completeAllTests ();
+  void completeAllTests();
  private:
-  void Set_arrSizes ();
-  double DirectTest (int arr_size);
-  double ReverseTest (int arr_size);
-  double RandomTest (int arr_size);
+  void Set_arrSizes();
+  double DirectTest(int arr_size);
+  double ReverseTest(int arr_size);
+  double RandomTest(int arr_size);
   int *GetRandArr(int size);
-  unsigned long int GetRandom(int first, int last);
+  int GetRandom(int first, int last);
  private:
   std::vector<int> arr_sizes;
 };
