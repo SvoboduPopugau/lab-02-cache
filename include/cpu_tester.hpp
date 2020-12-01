@@ -1,7 +1,7 @@
 // Copyright 2020 Your Name <your_email>
 
-#ifndef INCLUDE_HEADER_HPP_
-#define INCLUDE_HEADER_HPP_
+#ifndef INCLUDE_CPU_TESTER_HPP_
+#define INCLUDE_CPU_TESTER_HPP_
 
 #include <vector>
 #include <random>
@@ -11,7 +11,7 @@
 
 class CPU_tester{
  public:
-  CPU_tester(const std::vector<int>& arrSizes);
+  explicit CPU_tester(const std::vector<int>& arrSizes);
   void completeAllTests();
  private:
   void Set_arrSizes();
@@ -24,4 +24,4 @@ class CPU_tester{
   std::vector<int> arr_sizes;
 };
 
-#endif // INCLUDE_HEADER_HPP_
+#endif  // INCLUDE_CPU_TESTER_HPP_
