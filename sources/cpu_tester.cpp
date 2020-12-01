@@ -72,7 +72,7 @@ double CPU_tester::DirectTest(int arr_size) {
         std::chrono::duration_cast<std::chrono::microseconds>(finish-start)
             .count();
   }
-  delete array;
+  delete [] array;
   return time/static_cast<double>(TESTCOUNT);
 }
 double CPU_tester::ReverseTest(int arr_size) {
@@ -93,7 +93,7 @@ double CPU_tester::ReverseTest(int arr_size) {
         std::chrono::duration_cast<std::chrono::microseconds>(finish - start)
         .count();
   }
-  delete array;
+  delete [] array;
   return time/static_cast<double>(TESTCOUNT);
 }
 double CPU_tester::RandomTest(int arr_size) {
@@ -114,7 +114,7 @@ double CPU_tester::RandomTest(int arr_size) {
         std::chrono::duration_cast<std::chrono::microseconds>(finish - start)
             .count();
   }
-  delete array;
+  delete [] array;
   return time/static_cast<double>(TESTCOUNT);
 }
 int CPU_tester::GetRandom(int first, int last) {
