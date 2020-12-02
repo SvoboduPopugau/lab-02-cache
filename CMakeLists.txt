@@ -27,11 +27,9 @@ hunter_add_package(GTest)
 find_package(GTest CONFIG REQUIRED)
 
 add_library(lab-02-cache STATIC
-  # enum your files and delete this comment
         ${CMAKE_CURRENT_SOURCE_DIR}/sources/cpu_tester.cpp
 )
 add_executable(tests
-  # TODO: enum your files and delete this comment
   ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
 )
 target_include_directories(lab-02-cache
