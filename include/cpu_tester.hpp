@@ -7,11 +7,12 @@
 #include <random>
 #include <chrono>
 
-#define TESTCOUNT 1000
+const int TESTCOUNT = 1000;
+const int TRANSFORM = 256;
 
 class CPU_tester{
  public:
-  explicit CPU_tester(const std::vector<int>& arrSizes);
+  CPU_tester(const std::vector<int>& ArrSizes, const int L1Cache, const int L3Cache);
   void completeAllTests();
  private:
   void Set_arrSizes();
@@ -22,6 +23,9 @@ class CPU_tester{
   int GetRandom(int first, int last);
  private:
   std::vector<int> arr_sizes;
+  int Cache[2];
+//  int L1;
+//  int L3;
 };
 
 #endif  // INCLUDE_CPU_TESTER_HPP_

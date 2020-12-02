@@ -2,19 +2,19 @@
 
 #include <cpu_tester.hpp>
 #include <iostream>
-CPU_tester::CPU_tester(const std::vector<int>& arrSizes)
-    : arr_sizes(arrSizes) {
-  this->Set_arrSizes();
+CPU_tester::CPU_tester(const std::vector<int> &ArrSizes, const int L1Cache, const int L3Cache)
+    :arr_sizes(ArrSizes){
+    Cache[0] = L1Cache;
+    Cache[1] = L3Cache;
+    this->Set_arrSizes();
 }
 void CPU_tester::Set_arrSizes() {
-  int L1 = 32;
-  int L3 = 8192;  //in Kib
-  int size = L1/2;
-  while (size < 3 * L3 / 2) {
-    arr_sizes.push_back(size * 256);
+  int size = Cache[0]/2;
+  while (size < 3 * Cache[1] / 2) {
+    arr_sizes.push_back(size * TRANSFORM);
     size *= 2;
   }
-  arr_sizes.push_back(3 * 256 * L3 / 2);
+  arr_sizes.push_back(TRANSFORM * 3 * Cache[1] / 2);
 }
 void CPU_tester::completeAllTests() {
 //    Direct test
@@ -24,7 +24,7 @@ void CPU_tester::completeAllTests() {
     std::cout << "- experiment: " << std::endl <<\
         "    number: " << i + 1 << std::endl <<\
         "    input data: " << std::endl <<\
-        "      buffer size: " << arr_sizes[i]/256 << "KiB" << std::endl <<\
+        "      buffer size: " << arr_sizes[i]/TRANSFORM << "KiB" << std::endl <<\
         "    results: " << std::endl <<\
         "      duration: " << DirectTest(arr_sizes[i]) << " mcs" <<\
         std::endl;
@@ -36,7 +36,7 @@ void CPU_tester::completeAllTests() {
     std::cout << "- experiment: " << std::endl <<\
         "    number: " << i + 1 << std::endl <<\
         "    input data: " << std::endl <<\
-        "      buffer size: " << arr_sizes[i]/256 << "KiB" << std::endl <<\
+        "      buffer size: " << arr_sizes[i]/TRANSFORM << "KiB" << std::endl <<\
         "    results: " << std::endl <<\
         "      duration: " << ReverseTest(arr_sizes[i]) << " mcs" <<\
         std::endl;
@@ -48,7 +48,7 @@ void CPU_tester::completeAllTests() {
     std::cout << "- experiment: " << std::endl <<\
         "    number: " << i + 1 << std::endl <<\
         "    input data: " << std::endl <<\
-        "      buffer size: " << arr_sizes[i]/256 << "KiB" << std::endl <<\
+        "      buffer size: " << arr_sizes[i]/TRANSFORM << "KiB" << std::endl <<\
         "    results: " << std::endl <<\
         "      duration: " << RandomTest(arr_sizes[i]) << " mcs" <<\
         std::endl;
@@ -120,6 +120,7 @@ double CPU_tester::RandomTest(int arr_size) {
 int CPU_tester::GetRandom(int first, int last) {
   return first + random() % (last - first + 1);
 }
+
 int* CPU_tester::GetRandArr(int size) {
   int *arr = new int[size];
   for (int i = 0; i < size; ++i)

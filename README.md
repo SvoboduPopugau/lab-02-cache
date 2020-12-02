@@ -131,31 +131,9 @@ cache_size['3'] = 8 mb;
 Для получения времени обхода от размера массива процедуру прохода необходимо многократно повторить (порядка 1000 раз).
 
 ### Результаты
-
-Ниже представлен формат и пример отчета:
+Ниже предоставлен отчет:
 
 ```yaml
-investigation:                                       |  investigaion:
-  travel_variant: <вариант_прохода>                  |    travel_order: "direction"
-  experiments:                                       |    experiments:
-  - experiment:                                      |    - experiment:
-      number:                                        |        number: 1
-      input_data:                                    |        input_data:
-        buffer_size: <размер_буфера>                 |          buffer_size: "1mb"
-      results:                                       |        results:
-        duration: <продолжительность>                |          duration: "1ns"
-  - experiment:                                      |    - experiment:
-      number: <номер_эксперимента>                   |        number: 2
-      input_data:                                    |        input_data:
-        buffer_size: <размер_буфера>                 |          buffer_size: "2mb"
-      results:                                       |        results:
-        duration: <продолжительность>                |          duration: "2ns"
-                                                     |
-investigation:                                       |  investigation:
-...                                                  |  ...
-```
-
-#### Отчет
 investigation: 
 
 travel variant: direct
@@ -371,5 +349,10 @@ experiments:
       buffer size: 12288KiB
     results: 
       duration: 10545.3 mcs
+...                                                  |  ...
+```
+
+#### Отчет
+
 
 ![Cache](./images/20201201020459.jpg)

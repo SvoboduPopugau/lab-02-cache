@@ -5,7 +5,7 @@
 
 TEST(Example, EmptyTest) {
     std::vector<int> e_vec;
-    CPU_tester example(e_vec);
+    CPU_tester example(e_vec, 32, 8192);
     example.completeAllTests();
     EXPECT_TRUE(true);
 }
