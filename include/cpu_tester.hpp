@@ -16,7 +16,7 @@ class CPU_tester{
              const int L1Cache, const int L3Cache);
   void completeAllTests();
  private:
-  void Set_arrSizes();
+  void SetArrSizes();
   double DirectTest(int arr_size);
   double ReverseTest(int arr_size);
   double RandomTest(int arr_size);

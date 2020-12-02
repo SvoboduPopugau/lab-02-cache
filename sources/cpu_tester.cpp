@@ -7,9 +7,9 @@ CPU_tester::CPU_tester(const std::vector<int> &ArrSizes,
     :arr_sizes(ArrSizes){
     Cache[0] = L1Cache;
     Cache[1] = L3Cache;
-    this->Set_arrSizes();
+    this->SetArrSizes();
 }
-void CPU_tester::Set_arrSizes() {
+void CPU_tester::SetArrSizes() {
   int size = Cache[0]/2;
   while (size < 3 * Cache[1] / 2) {
     arr_sizes.push_back(size * TRANSFORM);
