@@ -2,7 +2,8 @@
 
 #include <cpu_tester.hpp>
 #include <iostream>
-CPU_tester::CPU_tester(const std::vector<int> &ArrSizes, const int L1Cache, const int L3Cache)
+CPU_tester::CPU_tester(const std::vector<int> &ArrSizes,
+                       const int L1Cache, const int L3Cache)
     :arr_sizes(ArrSizes){
     Cache[0] = L1Cache;
     Cache[1] = L3Cache;
@@ -24,19 +25,22 @@ void CPU_tester::completeAllTests() {
     std::cout << "- experiment: " << std::endl <<\
         "    number: " << i + 1 << std::endl <<\
         "    input data: " << std::endl <<\
-        "      buffer size: " << arr_sizes[i]/TRANSFORM << "KiB" << std::endl <<\
+        "      buffer size: " << arr_sizes[i]/TRANSFORM << "KiB" <<\
+                                                        std::endl <<\
         "    results: " << std::endl <<\
         "      duration: " << DirectTest(arr_sizes[i]) << " mcs" <<\
         std::endl;
   }
   //Reverse test
-  std::cout << "investigation: " << std::endl << "travel variant: reverse" <<\
+  std::cout << "investigation: " << std::endl <<\
+                        "travel variant: reverse" <<\
       std::endl << "experiments: " << std::endl;
   for (size_t i = 0; i < arr_sizes.size(); ++i){
     std::cout << "- experiment: " << std::endl <<\
         "    number: " << i + 1 << std::endl <<\
         "    input data: " << std::endl <<\
-        "      buffer size: " << arr_sizes[i]/TRANSFORM << "KiB" << std::endl <<\
+        "      buffer size: " << arr_sizes[i]/TRANSFORM << "KiB" <<\
+                                                        std::endl <<\
         "    results: " << std::endl <<\
         "      duration: " << ReverseTest(arr_sizes[i]) << " mcs" <<\
         std::endl;
@@ -48,7 +52,8 @@ void CPU_tester::completeAllTests() {
     std::cout << "- experiment: " << std::endl <<\
         "    number: " << i + 1 << std::endl <<\
         "    input data: " << std::endl <<\
-        "      buffer size: " << arr_sizes[i]/TRANSFORM << "KiB" << std::endl <<\
+        "      buffer size: " << arr_sizes[i]/TRANSFORM << "KiB" <<\
+                                                        std::endl <<\
         "    results: " << std::endl <<\
         "      duration: " << RandomTest(arr_sizes[i]) << " mcs" <<\
         std::endl;
